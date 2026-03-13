@@ -19,7 +19,7 @@ Principal desarrollador y dueño del repositorio:
 
 | Foto | Nombre | Rol | Redes |
 | :---: | :--- | :--- | :--- |
-| <img src="./src/img/Caixba.png" width="50" style="border-radius:50%"> | **Jonathan Caixba** | Backend Developer | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jonathan-caixba) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)](https://github.com/JonathanCaixba) |
+| <img src="./img/Caixba.png" width="50" style="border-radius:50%"> | **Jonathan Caixba** | Backend Developer | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jonathan-caixba) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)](https://github.com/JonathanCaixba) |
 
 ---
 
