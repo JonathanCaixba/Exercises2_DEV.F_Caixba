@@ -1,0 +1,51 @@
+
+.navbar{
+    background-color: darkred;
+}
+
+.barra {
+    background-color: darkred;
+}
+
+a.nav-link {
+    color: white;
+    font-size: 18px;
+    margin-right: 15px;
+}
+
+a.nav-link:hover {
+    color: #d185d1;
+}
+
+a.nav-link:active {
+    color: #988f1c;
+}
+
+.boton-personalizado {
+    background-color: #212d11;
+    border: #d185d1;
+    border-radius: 50px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.boton-personalizado:hover {
+    background-color: #988f1c;
+}
+
+.navbar-brand{
+    font-size: 24px;
+}
+
+.tarjeta-productos h3{
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.tarjeta-productos{
+    background-color: #6f42c1;
+    color: white;
+    border: 2px solid white;
+    padding: 40px;
+    text-align: center;
+}

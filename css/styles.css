@@ -1,0 +1,258 @@
+/* ¿Cómo se controla el orden de CSS
+1. Importancia
+2. Especificidad
+3. Orden de las fuentes: hojas estilo externa, estilos en línea, embebido (interno).
+Valores de especificidad, de mayor a menor:
+1. !important - Le gana a todos, mayor especificidad, pero rompe las reglas. NO ES UNA BUENA PRÁCTICA.
+2. Estilos en línea -- Valor de 1000
+3. ID -- Valor de 100
+4. Clases, atributos, y pseudoclases -- Valor de 10
+5. Selectores de tipo y pseudoelementos -- Valor de 1
+6. Selector universdal -- Valor de 0. 
+*/
+
+/* --- 1. Variables y Configuración Inicial --- */
+:root {
+    --color-fondo: #550101;
+    --color-blanco: #ffffff;
+    --color-texto: #333333;
+    --color-primario: #d32f2f;
+    --color-acento: #0056b3;
+    --sombra-suave: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --radio-borde: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Bitter', serif;
+    /* Fuente Bitter elegante */
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* --- 2. Estructura Principal --- */
+main {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--color-blanco);
+    padding: 40px;
+    border-radius: var(--radio-borde);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* --- 3. Navegación Flexible --- */
+nav {
+    background-color: var(--color-blanco);
+    padding: 15px 20px;
+    border-radius: var(--radio-borde);
+    margin-bottom: 30px;
+    box-shadow: var(--sombra-suave);
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 600;
+    font-size: 1.1em;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--color-primario);
+    transition: width .3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: var(--color-primario);
+}
+
+/* --- 4. Títulos y Textos --- */
+h1,
+h2 {
+    color: var(--color-fondo);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 600;
+    animation-duration: 3s;
+    animation-name: slidein
+}
+
+@keyframes slidein {
+    from {
+        margin-top: -100px;
+        opacity: 0;
+    }
+
+    to {
+        margin-top: 0px;
+        opacity: 1;
+    }
+}
+
+h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--color-primario);
+    display: inline-block;
+}
+
+p {
+    font-size: 1.05em;
+    color: #555;
+    margin-bottom: 20px;
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+
+/* --- 5. Imagen de Perfil --- */
+img {
+    display: block;
+    margin: 30px auto;
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--color-blanco);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+/* --- 6. Listas (Hobbies y Música) --- */
+#hobbies {
+    padding-left: 20px;
+}
+
+#hobbies li {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+#lista-musica {
+    padding: 0;
+    list-style: none;
+}
+
+#lista-musica li {
+    background-color: #f9f9f9;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+#lista-musica li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#lista-musica a {
+    background-color: var(--color-acento);
+    color: white;
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 86, 179, 0.3);
+}
+
+#lista-musica a:hover {
+    background-color: #003d80;
+    box-shadow: 0 6px 12px rgba(0, 86, 179, 0.4);
+    transform: translateY(-1px);
+}
+
+/* --- 7. Footer --- */
+footer {
+    text-align: center;
+    margin-top: 60px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9em;
+}
+
+/* --- 8. RESPONSIVIDAD (Aqui necesite ayuda de Gemini) --- */
+/* Esto se activa solo en pantallas menores a 600px (Celulares) */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    main {
+        padding: 20px;
+        /* Menos relleno para aprovechar espacio */
+    }
+
+    h1 {
+        font-size: 1.8em;
+        /* Título un poco más pequeño */
+    }
+
+    /* En celular, la lista de música cambia para que no se amontone */
+    #lista-musica li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    #lista-musica a {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+}
